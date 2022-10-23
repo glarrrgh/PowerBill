@@ -1,0 +1,1 @@
+program som regner ut strømregningen
