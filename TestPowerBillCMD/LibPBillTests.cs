@@ -1,9 +1,11 @@
 
 
+using System.Runtime.ExceptionServices;
+
 namespace LibPBill.Tests
 {
     [TestClass]
-    public class PowerBillCMDTests
+    public class LibPBillTests
     {
         [TestMethod]
         public void TestZeroValues()
@@ -14,6 +16,9 @@ namespace LibPBill.Tests
         [TestMethod]
         public void TestSomeValues()
         {
+            Meter first = new Meter(18537, new DateOnly(2022, 8, 1));
+            Meter second = new Meter(18975, new DateOnly(2022, 9, 1));
+
             int startPowerMeter = 18537;
             DateOnly startPowerDate = new DateOnly(2022, 8, 1);
             int stopPowerMeter = 18975;
@@ -38,6 +43,34 @@ namespace LibPBill.Tests
                 netPrice,
                 netFixedPrice
             ));
+        }
+    }
+
+    [TestClass]
+    public class MeterTests
+    {
+        [TestMethod]
+        public void TestSomeMeter()
+        {
+            DateOnly date = new DateOnly(2001, 2, 3);
+            Meter meter = new Meter(2, date);
+            Assert.AreEqual((UInt32)2, meter.GetValue());
+            Assert.AreEqual(date, meter.GetStartDate());
+            Assert.AreEqual(date, meter.GetEndDate());
+        }
+
+        [TestMethod]
+        public void TestSubstract()
+        {
+            Meter first = new Meter(1, new DateOnly(2001, 2, 3));
+            Meter second = new Meter(3, new DateOnly(2001, 3, 1));
+            MeterDelta difference = new MeterDelta(
+                2,
+                new DateOnly(2001, 2, 3),
+                new DateOnly(2001, 3, 1)
+            );
+            Assert.AreEqual(difference, first - second);
+            Assert.AreEqual(difference, second - first);
         }
     }
 }
