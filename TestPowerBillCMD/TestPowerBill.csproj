@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PBill\LibPBill.csproj" />
+	<ProjectReference Include="..\PowerBillCMD\PowerBillCMD.csproj" />
   </ItemGroup>
 
 </Project>

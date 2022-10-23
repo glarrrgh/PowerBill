@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerBillCMD", "PowerBillCMD\PowerBillCMD.csproj", "{E3010594-E5BA-4AC0-92C9-892DDB734A78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPowerBillCMD", "TestPowerBillCMD\TestPowerBillCMD.csproj", "{862A1E92-9530-4F5B-996E-3F8F7647B2B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPowerBill", "TestPowerBillCMD\TestPowerBill.csproj", "{862A1E92-9530-4F5B-996E-3F8F7647B2B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibPBill", "PBill\LibPBill.csproj", "{410720BC-53E5-4CBE-AB90-97C9221B97B8}"
 EndProject

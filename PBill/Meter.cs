@@ -12,6 +12,7 @@ namespace LibPBill
         private DateOnly startDate;
         public Meter(UInt32 value, DateOnly date)
         {
+            if (value > 99999) { throw new ArgumentOutOfRangeException("value"); }
             this.value = value;
             this.startDate = date;
         }
