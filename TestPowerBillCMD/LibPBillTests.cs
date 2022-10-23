@@ -19,27 +19,15 @@ namespace LibPBill.Tests
             Meter first = new Meter(18537, new DateOnly(2022, 8, 1));
             Meter second = new Meter(18975, new DateOnly(2022, 9, 1));
 
-            int startPowerMeter = 18537;
-            DateOnly startPowerDate = new DateOnly(2022, 8, 1);
-            int stopPowerMeter = 18975;
-            DateOnly endPowerDate = new DateOnly(2022, 9, 1);
             decimal powerPrice = 4.391M - 2.7429M;
-            int startNetMeter = 18537;
-            DateOnly startNetDate = new DateOnly(2022, 8, 1);
-            int stopNetMeter = 18975;
-            DateOnly endNetDate = new DateOnly(2022, 9, 1);
             decimal netPrice = 0.5676M;
             decimal netFixedPrice = 281.25M;
             Assert.AreEqual(1111.1016M, PBill.CalculatePBill(
-                startPowerMeter,
-                startPowerDate,
-                stopPowerMeter,
-                endPowerDate,
+                first,
+                second,
                 powerPrice,
-                startNetMeter,
-                startNetDate,
-                stopNetMeter,
-                endNetDate,
+                first,
+                second,
                 netPrice,
                 netFixedPrice
             ));

@@ -12,24 +12,18 @@ namespace PowerBillCMD
                 );
                 return;
             }
-            int startMeter = Int32.Parse(args[0]);
-            int stopMeter = Int32.Parse(args[2]);
-            DateOnly startDate = DateOnly.Parse(args[1]);
-            DateOnly endDate = DateOnly.Parse(args[3]);
+            Meter startMeter = new Meter(UInt32.Parse(args[0]), DateOnly.Parse(args[1]));
+            Meter endMeter = new Meter(UInt32.Parse(args[2]), DateOnly.Parse(args[3]));
             decimal powerPrice = decimal.Parse(args[4]);
             decimal netprice = decimal.Parse(args[5]);
             decimal netfixedprice = decimal.Parse(args[6]);
             Console.WriteLine(
                 PBill.CalculatePBill(
                     startMeter,
-                    startDate,
-                    stopMeter,
-                    endDate,
+                    endMeter,
                     powerPrice,
                     startMeter,
-                    startDate,
-                    stopMeter,
-                    endDate,
+                    endMeter,
                     netprice,
                     netfixedprice
                 )

@@ -20,7 +20,7 @@ namespace LibPBill
         public DateOnly GetStartDate() => this.startDate;
         public DateOnly GetEndDate() => this.startDate;
 
-        public static Meter operator -(Meter first, Meter second)
+        public static MeterDelta operator -(Meter first, Meter second)
         {
             if (first.GetStartDate() > second.GetStartDate())
             {
