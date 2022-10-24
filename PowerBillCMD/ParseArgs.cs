@@ -48,7 +48,7 @@ Dates need to be on regular norwegian format, like day.month.year.";
                 this._endMeter = new Meter(ParseMeterValue(args[2], "endmeter"), ParseDate(args[3], "enddate"));
                 this._powerPrice = ParsePrice(args[4], "powerprice");
                 this._netPrice = ParsePrice(args[5], "netprice");
-                this._netFixedPrice = ParsePrice(args[6], "netprice");
+                this._netFixedPrice = ParsePrice(args[6], "netfixedprice");
             } 
             catch (IndexOutOfRangeException) 
             {                
