@@ -18,18 +18,14 @@ namespace PowerBillCMD
                 Console.WriteLine(e.Message);
                 return;
             }
-            /*catch (FormatException) { Console.WriteLine(helptext); return; }
-            catch (OverflowException) { Console.WriteLine(helptext); return; }
-            catch (IndexOutOfRangeException) { Console.WriteLine(helptext); return; }
-            catch (ArgumentOutOfRangeException) { Console.WriteLine(helptext); return; }*/
             Console.WriteLine(PBill.CalculatePBill(
-                parsedArgs.getStartMeter(),
-                parsedArgs.getEndMeter(),
-                parsedArgs.getPowerPrice(),
-                parsedArgs.getStartMeter(),
-                parsedArgs.getEndMeter(),
-                parsedArgs.getNetPrice(),
-                parsedArgs.getNetFixedPrice()
+                parsedArgs.GetStartMeter(),
+                parsedArgs.GetEndMeter(),
+                parsedArgs.GetPowerPrice(),
+                parsedArgs.GetStartMeter(),
+                parsedArgs.GetEndMeter(),
+                parsedArgs.GetNetPrice(),
+                parsedArgs.GetNetFixedPrice()
             ));
         }
     }
